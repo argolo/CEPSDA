@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CEPSDA - Consumo Sustentável de Água</title>
     <style>
+      /* Forçar tema claro */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          color-scheme: light;
+        }
+      }
+
       /* Estilos Gerais */
       * {
         margin: 0;
@@ -139,13 +146,12 @@
       footer p {
         margin-bottom: 10px;
       }
-    </style>
-    <style>
+
+      /* Linha do Tempo */
       .timeline {
         padding: 40px;
         background-color: #f0f8ff;
         color: #333;
-        font-family: Arial, sans-serif;
       }
 
       .timeline h2 {
@@ -211,6 +217,7 @@
         background-color: #eaf7ea;
       }
 
+      /* Responsividade */
       @media (max-width: 768px) {
         .timeline-layout {
           flex-direction: column;
@@ -226,15 +233,14 @@
         }
       }
 
-      /* Responsividade para telas menores */
       @media (max-width: 768px) {
         .solucoes {
-          flex-direction: column; /* coloca um embaixo do outro */
+          flex-direction: column;
           padding: 40px 5%;
         }
 
         .solucao {
-          margin-bottom: 20px; /* adiciona um espaço entre os blocos */
+          margin-bottom: 20px;
         }
       }
     </style>
