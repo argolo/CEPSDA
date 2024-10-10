@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CEPSDA - Consumo Sustentável de Água</title>
+    <style>
+      /* Estilos Gerais */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        background-color: #f4f9f9;
+        color: #333;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      h2,
+      h3 {
+        font-weight: bold;
+        color: #1b4d3e;
+      }
+
+      p {
+        font-size: 1.1em;
+        line-height: 1.8;
+      }
+
+      /* Header */
+      header {
+        background: url("https://ecoa.org.br/wp-content/uploads/2022/02/barragem-1.jpg")
+          no-repeat center center/cover;
+        background-color: #1b4d3e;
+        height: 100vh;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 4em;
+        margin-bottom: 20px;
+      }
+
+      header p {
+        font-size: 1.5em;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Seções */
+      section {
+        padding: 80px 20px;
+      }
+
+      section h2 {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 40px;
+      }
+
+      /* Seção Soluções */
+      .solucoes {
+        background-color: #1b4d3e;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 80px 5%;
+      }
+
+      .solucao {
+        background-color: #a9dfbf;
+        padding: 30px;
+        border-radius: 10px;
+        flex: 1;
+        text-align: center;
+      }
+
+      .solucao h3 {
+        margin-bottom: 20px;
+      }
+
+      .solucao p {
+        color: #333;
+      }
+
+      /* Seção Depoimentos */
+      .depoimentos {
+        background-color: #f4f9f9;
+      }
+
+      .depoimentos-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+      }
+
+      .depoimento {
+        background-color: white;
+        padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .depoimento img {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        margin-bottom: 20px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 40px;
+      }
+
+      footer p {
+        margin-bottom: 10px;
+      }
+    </style>
+    <style>
+      .timeline {
+        padding: 40px;
+        background-color: #f0f8ff;
+        color: #333;
+        font-family: Arial, sans-serif;
+      }
+
+      .timeline h2 {
+        color: #007bff;
+        font-size: 32px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .timeline-layout {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .image-container img {
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .timeline-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 60%;
+      }
+
+      .timeline-item {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px 0;
+        width: 100%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      .timeline-item:before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #28a745;
+        border-radius: 50%;
+        top: 20px;
+        left: -15px;
+      }
+
+      .timeline-item h3 {
+        color: #28a745;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .timeline-item p {
+        color: #555;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .timeline-item:nth-child(odd) {
+        background-color: #eaf7ea;
+      }
+
+      @media (max-width: 768px) {
+        .timeline-layout {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .timeline-container {
+          width: 100%;
+        }
+
+        .image-container img {
+          max-width: 100%;
+        }
+      }
+
+      /* Responsividade para telas menores */
+      @media (max-width: 768px) {
+        .solucoes {
+          flex-direction: column; /* coloca um embaixo do outro */
+          padding: 40px 5%;
+        }
+
+        .solucao {
+          margin-bottom: 20px; /* adiciona um espaço entre os blocos */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>CEPSDA</h1>
+      <p>
+        <small>Consumo e Produção Sustentável da Água</small>
+        <br />
+        <b>A mudança começa por cada um de nós!</b>
+      </p>
+    </header>
+
+    <!-- Seção Introdução -->
+    <section class="timeline">
+      <h2>Por que o Consumo Sustentável da Água é Crucial?</h2>
+
+      <div class="timeline-layout">
+        <div class="image-container">
+          <img
+            width="100%"
+            height="auto"
+            src="https://thumbs.dreamstime.com/b/lago-seco-23409813.jpg"
+            alt="Água e Sustentabilidade"
+          />
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <h3>O Futuro que Já Vemos</h3>
+            <p>
+              Imagine um futuro onde abrir a torneira não garante mais água
+              limpa e abundante. Grandes cidades enfrentam racionamento,
+              plantações secam, e milhões de pessoas lutam por um recurso antes
+              abundante.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>A Água e a Vida</h3>
+            <p>
+              A água é o alicerce da vida. Apenas 3% da água no planeta é doce,
+              e grande parte está inacessível. O que resta está sendo exaurido
+              devido ao uso irresponsável e à poluição.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Realidade do Semiárido Brasileiro</h3>
+            <p>
+              No semiárido brasileiro, famílias enfrentam a escassez hídrica
+              diariamente. Maria, agricultora no Nordeste, precisa caminhar
+              quilômetros para encontrar água em um poço quase seco.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>A Crise Hídrica nas Grandes Cidades</h3>
+            <p>
+              Em 2015, São Paulo enfrentou a pior crise hídrica de sua história
+              recente. Bilhões de litros de água foram perdidos em sistemas
+              ineficientes, enquanto torneiras secavam em muitas casas.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Um Chamado à Ação</h3>
+            <p>
+              A prática do consumo sustentável de água é uma responsabilidade.
+              Cada gota conta. Pequenas ações como consertar vazamentos e
+              reutilizar água podem evitar um futuro sem volta.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Proteja o Futuro</h3>
+            <p>
+              A crise hídrica não escolhe fronteiras. Precisamos agir agora,
+              promovendo inovações e práticas de consumo consciente, garantindo
+              água limpa para as gerações futuras.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Soluções -->
+    <section class="solucoes">
+      <div class="solucao">
+        <h3>Redução de Desperdício</h3>
+        <p>
+          Economize água com pequenas mudanças, como consertar vazamentos e usar
+          a água de forma consciente, evitando desperdícios no dia a dia.
+        </p>
+      </div>
+      <div class="solucao">
+        <h3>Captação e Reuso</h3>
+        <p>
+          Reaproveite água com sistemas de captação de chuva para tarefas como
+          irrigação e limpeza, preservando água potável.
+        </p>
+      </div>
+      <div class="solucao">
+        <h3>Tecnologias Sustentáveis</h3>
+        <p>
+          Adote tecnologias que otimizam o consumo, como sistemas de reuso e
+          eficiência hídrica, garantindo o uso inteligente da água.
+        </p>
+      </div>
+      <div class="solucao">
+        <h3>Cidades e Comunidades Sustentáveis</h3>
+        <p>
+          Promova práticas sustentáveis em cidades e comunidades, preservando
+          mananciais e incentivando o consumo consciente e responsável da água.
+        </p>
+      </div>
+    </section>
+
+    <!-- Seção Depoimentos -->
+    <section class="depoimentos">
+      <h2>Depoimentos de Quem Viveu o Impacto</h2>
+      <div class="depoimentos-container">
+        <div class="depoimento">
+          <img
+            src="https://randomuser.me/api/portraits/men/29.jpg"
+            alt="Foto de João Silva"
+          />
+          <p>
+            "Minha comunidade sofreu uma seca severa. Através da adoção de
+            tecnologias de captação de água da chuva, conseguimos sobreviver a
+            esse período crítico."
+          </p>
+          <p>— João Silva</p>
+        </div>
+        <div class="depoimento">
+          <img
+            src="https://randomuser.me/api/portraits/women/16.jpg"
+            alt="Foto de Maria Souza"
+          />
+          <p>
+            "Graças às práticas de reutilização de água, consegui reduzir meu
+            consumo em casa e ensinar meus filhos sobre a importância da
+            sustentabilidade."
+          </p>
+          <p>— Maria Souza</p>
+        </div>
+        <div class="depoimento">
+          <img
+            src="https://randomuser.me/api/portraits/men/37.jpg"
+            alt="Foto de Carlos Oliveira"
+          />
+          <p>
+            "Nas fazendas onde trabalho, a instalação de sistemas de irrigação
+            eficientes foi crucial para mantermos a produção durante períodos de
+            escassez de água."
+          </p>
+          <p>— Carlos Oliveira</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 CEPSDA - Todos os direitos reservados.</p>
+      <p>
+        <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a>
+      </p>
+    </footer>
+  </body>
+</html>
